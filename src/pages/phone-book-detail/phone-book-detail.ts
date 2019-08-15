@@ -1,12 +1,8 @@
+import { SMS } from '@ionic-native/sms/ngx';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the PhoneBookDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -15,15 +11,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PhoneBookDetailPage {
 
-  contact = {name: '', telephone: '', imageUrl: ''};
+    contact = {name:'',telephone:'',imageUrl:''};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public mysms: SMS) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PhoneBookDetailPage');
-    this.contact = this.navParams.data;
+    this.contact=this.navParams.data;
     console.log(this.contact);
   }
 
-}//end
+  call(){
+    window.open('tel:'+this.contact.telephone);
+  }
+
+  sms(){
+    this.mysms.send(this.contact.telephone, 'Hello world!');
+
+  }
+
+  
+
+
+
+
+
+}//endclss

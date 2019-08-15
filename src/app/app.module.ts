@@ -1,3 +1,6 @@
+import { FlashlightPage } from './../pages/flashlight/flashlight';
+import { VibrationPage } from './../pages/vibration/vibration';
+import BarcodeScannerPage from './../pages/barcode-scanner/barcode-scanner';
 import { PhoneBookPage } from './../pages/phone-book/phone-book';
 import { PhoneBookDetailPage } from './../pages/phone-book-detail/phone-book-detail';
 import { LoginPage } from './../pages/login/login';
@@ -11,6 +14,11 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SMS } from '@ionic-native/sms/ngx';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Vibration } from '@ionic-native/vibration';
+import { BatteryStatus } from '@ionic-native/battery-status';
+import { Flashlight } from '@ionic-native/flashlight';
 
 @NgModule({
   declarations: [
@@ -18,6 +26,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LoginPage,
+    BarcodeScannerPage,
+    VibrationPage,
+    FlashlightPage,
+    
   
     
 
@@ -32,14 +44,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     LoginPage,
+    BarcodeScannerPage,
+    VibrationPage,
+    FlashlightPage
+    
     
     
     
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,SMS,BarcodeScanner,Vibration,Flashlight,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
+    
   ]
 })
 export class AppModule {}

@@ -20,12 +20,12 @@ export class LoginPage {
   }
 
   signIn(_username,_password){
-  alert('Hello'+ _username );
+  alert('Hello'+_username);
   if (_password == '1234') {
     this.loginResult = 'Pass';
     this.navCtrl.push("PhoneBookPage");
   } else {
-    this.loginResult = 'Failed';
+    this.loginResult = 'Fall';
   }
   }
 
